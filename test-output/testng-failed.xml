@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [WizeLine - Exercise 1]">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="com.automation.framework.utils.Listeners.MyListener"/>
+  </listeners>
+  <test name="Login test(failed)">
+    <classes>
+      <class name="com.automation.tests.LoginTest">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="testFlightSearch" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.automation.tests.LoginTest -->
+    </classes>
+  </test> <!-- Login test(failed) -->
+</suite> <!-- Failed suite [WizeLine - Exercise 1] -->
