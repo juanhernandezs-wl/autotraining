@@ -1,6 +1,7 @@
 package com.automation.framework.utils;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -9,14 +10,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author Juan Hernandez This class creates a base page for all the pages from
  *         the SUT
  */
-public class BasePage {
-	protected WebDriver driver;
-	protected WebDriverWait wait;
+public class BasePage extends Waits {
+	public WebDriver driver;
+	public WebDriverWait wait;
 
 	public BasePage(WebDriver pDriver) {
 		PageFactory.initElements(pDriver, this);
-		wait = new WebDriverWait(pDriver, 10);
-		driver = pDriver;
+		this.wait = new WebDriverWait(pDriver, 10);
+		this.driver = pDriver;
 	}
 
 	public WebDriverWait getWait() {
@@ -24,12 +25,18 @@ public class BasePage {
 	}
 
 	protected WebDriver getDriver() {
-		return driver;
+		return this.driver;
 	}
 
 	public void dispose() {
-		if (driver != null) {
-			driver.quit();
+		if (this.driver != null) {
+			this.driver.quit();
 		}
 	}
+
+	@Override
+	public Waits waitForElementToBeDisplayed(WebDriver driver, final WebElement element) {
+		return super.waitForElementToBeDisplayed(driver, element);
+	}
+
 }

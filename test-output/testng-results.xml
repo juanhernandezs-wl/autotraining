@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="WizeLine - Exercise 1" duration-ms="890" started-at="2019-06-14T17:48:40Z" finished-at="2019-06-14T17:48:41Z">
+  <suite started-at="2019-08-27T21:59:26Z" name="WizeLine - Exercise 1" finished-at="2019-08-27T21:59:28Z" duration-ms="2056">
     <groups>
     </groups>
-    <test name="Login test" duration-ms="890" started-at="2019-06-14T17:48:40Z" finished-at="2019-06-14T17:48:41Z">
+    <test started-at="2019-08-27T21:59:26Z" name="Login test" finished-at="2019-08-27T21:59:28Z" duration-ms="2056">
       <class name="com.automation.tests.LoginTest">
-        <test-method status="PASS" signature="beforeSuite(java.lang.String)[pri:0, instance:com.automation.tests.LoginTest@5b275dab]" name="beforeSuite" is-config="true" duration-ms="4045" started-at="2019-06-14T12:48:36Z" finished-at="2019-06-14T12:48:40Z">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.automation.tests.LoginTest@2df3b89c]" started-at="2019-08-27T16:59:22Z" name="beforeSuite" finished-at="2019-08-27T16:59:26Z" duration-ms="4240" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,55 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="testFlightSearch(java.lang.String, java.lang.String)[pri:0, instance:com.automation.tests.LoginTest@5b275dab]" name="testFlightSearch" duration-ms="840" started-at="2019-06-14T12:48:40Z" data-provider="create" finished-at="2019-06-14T12:48:41Z">
+        <test-method signature="test_Login_InvalidCredentials(java.lang.String, java.lang.String)[pri:0, instance:com.automation.tests.LoginTest@2df3b89c]" started-at="2019-08-27T16:59:26Z" name="test_Login_InvalidCredentials" data-provider="invalidCredentials" finished-at="2019-08-27T16:59:27Z" duration-ms="663" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testuser@example.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Login_InvalidCredentials -->
+        <test-method signature="test_Login_InvalidCredentials(java.lang.String, java.lang.String)[pri:0, instance:com.automation.tests.LoginTest@2df3b89c]" started-at="2019-08-27T16:59:27Z" name="test_Login_InvalidCredentials" data-provider="invalidCredentials" finished-at="2019-08-27T16:59:28Z" duration-ms="478" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Login_InvalidCredentials -->
+        <test-method signature="test_Login_InvalidCredentials(java.lang.String, java.lang.String)[pri:0, instance:com.automation.tests.LoginTest@2df3b89c]" started-at="2019-08-27T16:59:28Z" name="test_Login_InvalidCredentials" data-provider="invalidCredentials" finished-at="2019-08-27T16:59:28Z" duration-ms="450" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Login_InvalidCredentials -->
+        <test-method signature="test_Login_ValidCredential(java.lang.String, java.lang.String)[pri:0, instance:com.automation.tests.LoginTest@2df3b89c]" started-at="2019-08-27T16:59:28Z" name="test_Login_ValidCredential" data-provider="validCredential" finished-at="2019-08-27T16:59:28Z" duration-ms="444" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -33,8 +81,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testFlightSearch -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.automation.tests.LoginTest@5b275dab]" name="afterSuite" is-config="true" duration-ms="125" started-at="2019-06-14T12:48:41Z" finished-at="2019-06-14T12:48:41Z">
+        </test-method> <!-- test_Login_ValidCredential -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.automation.tests.LoginTest@2df3b89c]" started-at="2019-08-27T16:59:29Z" name="afterSuite" finished-at="2019-08-27T16:59:29Z" duration-ms="154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

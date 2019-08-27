@@ -2,15 +2,14 @@ package com.automation.tests;
 
 import static org.testng.Assert.assertTrue;
 
-import org.openqa.selenium.By;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import com.automation.framework.dataproviders.StaticProvider;
 import com.automation.framework.pages.LoginPage;
 import com.automation.framework.pages.LoginResultPage;
 import com.automation.framework.utils.BaseTest;
-import com.beust.jcommander.Parameter;
 
 /**
  * 
@@ -20,17 +19,33 @@ import com.beust.jcommander.Parameter;
  */
 
 public class LoginTest extends BaseTest {
+	
 
-	@Test(dataProvider = "create", dataProviderClass = StaticProvider.class)
-	public void testFlightSearch(String user, String password) throws InterruptedException {
+
+ 
+	@Test(dataProvider = "validCredential", dataProviderClass = StaticProvider.class)
+	public void test_Login_ValidCredential(String user, String password) throws InterruptedException {
 		LoginPage loginPage = getLoginPage();
-		loginPage.clickLogin();
+		loginPage.clickWelcomeLogin();
 		loginPage.fillUserName(user);
 		loginPage.fillPassword(password);
 		LoginResultPage result = loginPage.login();
 		assertTrue(result.isBtnAddNoteDisplayed());
-		// TODO Add more assertions
 	}
+	
 
-	// TODO Implement another test cases
+	@Test(dataProvider = "invalidCredentials", dataProviderClass = StaticProvider.class)
+	public void test_Login_InvalidCredentials (String user, String password) throws InterruptedException{
+		LoginPage loginPage = getLoginPage();
+		loginPage.goHome();
+		loginPage.clickWelcomeLogin();
+		loginPage.fillUserName(user);
+		loginPage.fillPassword(password);
+		loginPage.clickLogin();
+		assertTrue(loginPage.getInvalidCredentialsError().isDisplayed());
+		loginPage.clickCancel();
+
+	}
+	
+	
 }

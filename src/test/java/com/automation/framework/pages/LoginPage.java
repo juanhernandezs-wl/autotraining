@@ -12,17 +12,29 @@ public class LoginPage extends CommonActions {
 		super(driver);
 		driver.get("http://testapp.galenframework.com/");
 	}
-
-	// Try to use css and elements with description
-	@FindBy(css = ".button-login")
+	
+	@FindBy(css = "button[onclick=\"App.showLoginPage();\"]")
+	private WebElement welcomeLoginButton;
+	
+	@FindBy(css = "button[onclick=\"App.login()\"]")
 	private WebElement loginButton;
+	
+	@FindBy(css = "button[onclick=\"App.showWelcomePage()\"]")
+	private WebElement cancelButton;
 
-	@FindBy(name = "login.username")
+	@FindBy(css = "input[placeholder=\"Username\"].form-control")
 	private WebElement txtUserName;
 
-	@FindBy(name = "login.password")
+	@FindBy(css = "input[placeholder=\"Password\"].form-control")
 	private WebElement txtPassword;
+	
+	@FindBy(id = "login-error-message")
+	private WebElement errorInvalidCredentials;
 
+	public void clickWelcomeLogin() {
+		clickButton(welcomeLoginButton);
+	}
+	
 	public void clickLogin() {
 		clickButton(loginButton);
 	}
@@ -38,5 +50,17 @@ public class LoginPage extends CommonActions {
 	public LoginResultPage login() {
 		clickButton(loginButton);
 		return new LoginResultPage(driver);
+	}
+	
+	public WebElement getInvalidCredentialsError() {
+		return errorInvalidCredentials;
+	}
+
+	public void clickCancel() {
+		clickButton(cancelButton);
+	}
+	
+	public void goHome() {
+		driver.get("http://testapp.galenframework.com/");
 	}
 }

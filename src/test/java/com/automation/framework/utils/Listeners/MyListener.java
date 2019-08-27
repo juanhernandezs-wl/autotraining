@@ -7,37 +7,39 @@ import org.testng.ITestResult;
 public class MyListener implements ITestListener {
 
 	public void onFinish(ITestContext arg0) {
-		// TODO Auto-generated method stub
+		System.out.println("Pruebas finalizadas");
 
 	}
 
 	public void onStart(ITestContext arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
+	 System.out.println("Comenzando con las pruebas automatizadas");
 
 	}
 
 	public void onTestFailure(ITestResult arg0) {
-		System.out.println("WIZELINE : El test falló");
+		System.out.println("Test: " + arg0.getInstanceName() + " FALLIDO");
 
 	}
 
 	public void onTestSkipped(ITestResult arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void onTestStart(ITestResult arg0) {
-		// TODO Auto-generated method stub
+		System.out.println("Prueba omitida:" + arg0.getInstanceName());
 
 	}
 
 	public void onTestSuccess(ITestResult arg0) {
-		System.out.println("WIZELINE: El test pasó");
+		System.out.println("Test: " + arg0.getName()+ " OK");
+		
 
+	}
+
+	public void onTestStart(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

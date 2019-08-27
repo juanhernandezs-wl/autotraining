@@ -20,15 +20,15 @@ public class NotePage extends BasePage {
 	private WebElement txtUserName;
 	
 	public void clicknotebutton() {
-		clickButton(loginButton);
+	//	clickButton(loginButton);
 	}
 
 	public void fillTitle(String user) {
-		enterText(txtUserName, user);
+	//	enterText(txtUserName, user);
 	}
 
 	public void fillNote(String password) {
-		enterText(txtPassword, password);
+	//	enterText(txtPassword, password);
 	}
 	
 	
