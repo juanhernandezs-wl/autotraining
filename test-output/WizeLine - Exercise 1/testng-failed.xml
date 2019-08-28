@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [WizeLine - Exercise 1]" guice-stage="DEVELOPMENT">
+  <parameter name="isHeadless" value="true"/>
   <parameter name="browser" value="chrome"/>
   <listeners>
     <listener class-name="com.automation.framework.utils.Listeners.MyListener"/>

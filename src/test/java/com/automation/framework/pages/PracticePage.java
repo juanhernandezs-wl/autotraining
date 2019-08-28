@@ -3,6 +3,7 @@ package com.automation.framework.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.automation.framework.utils.CommonActions;
 
@@ -10,19 +11,18 @@ public class PracticePage extends CommonActions {
 
 	public PracticePage(WebDriver driver) {
 		super(driver);
-		driver.get("https://learn.letskodeit.com/p/practice");
 	}
 
 	// Buttons
 
 	@FindBy(id = "bmwradio")
-	private WebElement radioBmwRadioButton;
+	public WebElement radioBmwRadioButton;
 
 	@FindBy(id = "benzradio")
 	private WebElement radioBenzRadioButton;
 
 	@FindBy(id = "hondaradio")
-	private WebElement radioHondaRadioButton;
+	public WebElement radioHondaRadioButton;
 
 	@FindBy(id = "openwindow")
 	private WebElement btnOpenWindow;
@@ -79,13 +79,13 @@ public class PracticePage extends CommonActions {
 	private WebElement comboCarSelect;
 
 	@FindBy(css = "option[value=\"bmw\"]")
-	private WebElement optionBMW;
+	public WebElement optionBMW;
 
 	@FindBy(css = "option[value=\"benz\"]")
-	private WebElement optionBenz;
+	public WebElement optionBenz;
 
 	@FindBy(css = "option[value=\"honda\"]")
-	private WebElement optionHonda;
+	public WebElement optionHonda;
 
 	@FindBy(id = "multiple-select-example")
 	private WebElement multipleSelectExample;
@@ -102,13 +102,62 @@ public class PracticePage extends CommonActions {
 	// Checkbox
 
 	@FindBy(css = "#checkbox-example label[for=\"bmw\"]")
-	private WebElement checkboxBMW;
+	public WebElement checkboxBMW;
 
 	@FindBy(css = "#checkbox-example label[for=\"benz\"]")
-	private WebElement checkboxBenz;
+	public WebElement checkboxBenz;
 
 	@FindBy(css = "#checkbox-example label[for=\"honda\"]")
-	private WebElement checkboxHonda;
+	public WebElement checkboxHonda;
+	
+	public void goToPracticePage() {
+		driver.get("https://learn.letskodeit.com/p/practice");
+	}
+	
+	public void selectRadioButton(String option) {
+		
+		switch (option.toLowerCase()) {
+		case "bmw":
+			clickButton(radioBmwRadioButton);
+			break;
+			
+		case "benz":
+			clickButton(radioBenzRadioButton);
+			break;
+			
+		case "honda":
+			clickButton(radioHondaRadioButton);
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	public void selectComboBox(String option) {
+		
+		switch (option.toLowerCase()) {
+		case "bmw":
+			clickButton(comboCarSelect);
+			clickButton(checkboxBenz);
+			break;
+			
+		case "benz":
+			clickButton(comboCarSelect);
+			clickButton(checkboxBenz);
+			break;
+			
+		case "honda":
+			clickButton(comboCarSelect);
+			clickButton(checkboxHonda);
+			break;
+
+		default:
+			break;
+		}
+		
+		
+	}
 	
 	
 

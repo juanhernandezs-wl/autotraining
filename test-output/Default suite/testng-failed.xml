@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.automation.tests.LoginTest">
+      <class name="com.automation.tests.PracticeTest">
         <methods>
-          <include name="test_Login_ValidCredential" invocation-numbers="0"/>
-          <include name="afterSuite"/>
-          <include name="test_Login_InvalidCredentials" invocation-numbers="0 1 2"/>
+          <include name="afterClass"/>
+          <include name="test_comboBoxSelection"/>
+          <include name="afterTest"/>
+          <include name="beforeClass"/>
+          <include name="beforeSuite"/>
         </methods>
-      </class> <!-- com.automation.tests.LoginTest -->
+      </class> <!-- com.automation.tests.PracticeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -2,6 +2,7 @@ package com.automation.framework.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
@@ -12,12 +13,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class MyDriver {
 
 	private WebDriver driver;
+	ChromeOptions chromeOptions;
 
-	public MyDriver(String browser) {
+	public MyDriver(String browser, Boolean isHeadless) {
 		switch (browser) {
 		case "chrome":
 			System.setProperty("webdriver.chrome.driver", "/Users/juan.hernandez/Documents/webdrivers/chromedriver");
-			driver = new ChromeDriver();
+
+			if (isHeadless) {
+				chromeOptions = new ChromeOptions();
+				chromeOptions.addArguments("--headless");
+				driver = new ChromeDriver(chromeOptions);
+			} else {
+				driver = new ChromeDriver();
+			}
 			break;
 
 		case "firefox":

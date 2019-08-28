@@ -3,6 +3,7 @@ package com.automation.framework.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.automation.framework.utils.CommonActions;
 
@@ -10,7 +11,6 @@ public class LoginPage extends CommonActions {
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
-		driver.get("http://testapp.galenframework.com/");
 	}
 	
 	@FindBy(css = "button[onclick=\"App.showLoginPage();\"]")
@@ -33,6 +33,10 @@ public class LoginPage extends CommonActions {
 
 	public void clickWelcomeLogin() {
 		clickButton(welcomeLoginButton);
+	}
+	
+	public void goToLoginPage() {
+		driver.get("http://testapp.galenframework.com/");
 	}
 	
 	public void clickLogin() {
@@ -60,7 +64,4 @@ public class LoginPage extends CommonActions {
 		clickButton(cancelButton);
 	}
 	
-	public void goHome() {
-		driver.get("http://testapp.galenframework.com/");
-	}
 }

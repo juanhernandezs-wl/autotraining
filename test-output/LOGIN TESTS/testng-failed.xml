@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [LOGIN TESTS]" guice-stage="DEVELOPMENT">
+  <parameter name="isHeadless" value="false"/>
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="com.automation.framework.utils.Listeners.MyListener"/>
+  </listeners>
+  <test name="Login test(failed)">
+    <classes>
+      <class name="com.automation.tests.PracticeTest">
+        <methods>
+          <include name="afterClass"/>
+          <include name="test_comboBoxSelection"/>
+          <include name="afterTest"/>
+          <include name="beforeClass"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- com.automation.tests.PracticeTest -->
+    </classes>
+  </test> <!-- Login test(failed) -->
+</suite> <!-- Failed suite [LOGIN TESTS] -->

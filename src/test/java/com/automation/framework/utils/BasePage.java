@@ -25,12 +25,12 @@ public class BasePage extends Waits {
 	}
 
 	protected WebDriver getDriver() {
-		return this.driver;
+		return driver;
 	}
 
 	public void dispose() {
-		if (this.driver != null) {
-			this.driver.quit();
+		if (driver != null) {
+			driver.quit();
 		}
 	}
 
