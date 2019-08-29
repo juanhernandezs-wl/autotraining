@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Groups demo]" guice-stage="DEVELOPMENT">
+  <parameter name="isHeadless" value="false"/>
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="com.automation.framework.utils.Listeners.MyListener"/>
+  </listeners>
+  <test name="Sanity Check(failed)">
+    <groups>
+      <run>
+        <include name="sanity"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.automation.tests.LoginTest">
+        <methods>
+          <include name="test_Login_ValidCredential" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.automation.tests.LoginTest -->
+      <class name="com.automation.tests.PracticeTest">
+        <methods>
+          <include name="test_clickRadioButtons"/>
+        </methods>
+      </class> <!-- com.automation.tests.PracticeTest -->
+    </classes>
+  </test> <!-- Sanity Check(failed) -->
+</suite> <!-- Failed suite [Groups demo] -->

@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Automation examples]" guice-stage="DEVELOPMENT">
-  <parameter name="isHeadless" value="false"/>
-  <parameter name="browser" value="chrome"/>
-  <listeners>
-    <listener class-name="com.automation.framework.utils.Listeners.MyListener"/>
-  </listeners>
-  <test name="PracticeTest(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
     <classes>
       <class name="com.automation.tests.PracticeTest">
         <methods>
@@ -18,5 +13,5 @@
         </methods>
       </class> <!-- com.automation.tests.PracticeTest -->
     </classes>
-  </test> <!-- PracticeTest(failed) -->
-</suite> <!-- Failed suite [Automation examples] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -21,18 +21,19 @@ import com.automation.framework.utils.BaseTest;
 
 public class LoginTest extends BaseTest {
 
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void beforeClass() {
-		loginPage=new LoginPage(webDriver);
+		loginPage = new LoginPage(webDriver);
 	}
-	
-	@AfterClass
+
+	@AfterClass(alwaysRun = true)
 	public void afterSuite() {
 		loginPage.dispose();
 	}
 
-	@Test(dataProvider = "validCredential", dataProviderClass = StaticProvider.class)
-	public void test_Login_ValidCredential(String user, String password) throws InterruptedException {	
+	@Test(dataProvider = "validCredential", dataProviderClass = StaticProvider.class, groups = { "sanity",
+			"happy path" })
+	public void test_Login_ValidCredential(String user, String password) throws InterruptedException {
 		loginPage.goToLoginPage();
 		loginPage.clickWelcomeLogin();
 		loginPage.fillUserName(user);

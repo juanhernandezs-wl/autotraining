@@ -19,7 +19,7 @@ public class MyListener extends BaseTest implements ITestListener {
 	}
 
 	public void onTestFailure(ITestResult arg0) {
-		System.err.println("Test: " + arg0.getInstanceName() + " FAILED");
+		System.out.println("Test: " + arg0.getInstanceName() + " FAILED");
 	}
 
 	public void onTestSkipped(ITestResult arg0) {

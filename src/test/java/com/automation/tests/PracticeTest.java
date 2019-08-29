@@ -7,6 +7,8 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.automation.framework.pages.PracticePage;
@@ -15,25 +17,27 @@ import com.automation.framework.utils.CommonActions;
 
 public class PracticeTest extends BaseTest {
 
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void beforeClass() {
 		practicePage = new PracticePage(webDriver);
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void afterClass() {
 		practicePage.dispose();
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void afterTest(ITestResult result) {
 		// Uncomment this line:
-		// CommonActions.takeScreenShot(result.getStatus(), result.getName(),
-		// webDriver);
+		CommonActions.takeScreenShot(result.getStatus(), result.getName(), webDriver);
+		System.out.println("* ScreenShot here *");
 
 	}
 
-	@Test(enabled = false)
+	// dependsOnMethod defines execution order. If dependent test fails, this method
+	// wont be executed
+	@Test(enabled = false, groups = { "sanity" }, dependsOnMethods = { "test_comboBoxSelection" })
 	public void test_clickRadioButtons() {
 		practicePage.goToPracticePage();
 		practicePage.selectRadioButton("benz");
@@ -45,13 +49,13 @@ public class PracticeTest extends BaseTest {
 	}
 
 	@Test(enabled = true)
-	public void test_comboBoxSelection() {
+	public void test_comboBoxSelection() throws InterruptedException {
 		practicePage.goToPracticePage();
-		practicePage.selectComboBox("benz");
-		practicePage.selectComboBox("bmw");
-		practicePage.selectComboBox("honda");
+		practicePage.selectOneFromDropDownMenu("benz");
+		practicePage.selectOneFromDropDownMenu("honda");
+		practicePage.selectOneFromDropDownMenu("bmw");
 
-		assertTrue(practicePage.checkboxBMW.isSelected());
+	
 	}
 
 }

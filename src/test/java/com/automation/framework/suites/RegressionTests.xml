@@ -1,13 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="LOGIN TESTS">
+<suite name="Automation examples">
 	<listeners>
-		<listener class-name="com.automation.framework.utils.Listeners.MyListener"></listener>
+		<listener
+			class-name="com.automation.framework.utils.Listeners.MyListener"></listener>
 	</listeners>
 	<parameter name="browser" value="chrome" />
 	<parameter name="isHeadless" value="false" />
-	<test name="Login test">
+	<test name="PracticeTest">
 		<classes>
+			<class name="com.automation.tests.LoginTest"></class>
 			<class name="com.automation.tests.PracticeTest"></class>
 		</classes>
 	</test>
